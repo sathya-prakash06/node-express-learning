@@ -39,7 +39,7 @@
 
 ### Streams
 
-- Writable
-- Readable
-- Duplex
-- Transform
+- Writable - Writes data to a stream
+- Readable - Reads data from a stream
+- Duplex - Reads and writes data to a stream
+- Transform -   Transforms data from one stream to another
