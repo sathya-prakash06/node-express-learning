@@ -18,6 +18,11 @@ app.get("/api/products/:id", (req, res) => {
   res.json(product);
 });
 
+app.get("/api/v1/query", (req, res) => {
+  console.log(req.query);
+  res.json(req.query);
+});
+
 app.listen(4500, () => {
   console.log("Server is running on port 4500");
 });
