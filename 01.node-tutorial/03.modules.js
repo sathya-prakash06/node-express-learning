@@ -4,6 +4,7 @@
 
 const names = require("./04.names.js");
 const sayHi = require("./05.utils.js");
+require('./07.mind-granade')
 
 console.log(names);
 sayHi("Sathya");
