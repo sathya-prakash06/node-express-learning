@@ -15,3 +15,10 @@
 4. No File sysyems - File system
 5. Fragmentations - Version
 6. ES6 Modules - commonjs
+
+### Built-in modules
+
+- OS
+- Path
+- FS
+- HTTP
