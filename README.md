@@ -37,3 +37,9 @@
 - npm search
 - npm help
 
+### Streams
+
+- Writable
+- Readable
+- Duplex
+- Transform
