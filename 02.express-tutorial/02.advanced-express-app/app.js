@@ -19,8 +19,26 @@ app.get("/api/products/:id", (req, res) => {
 });
 
 app.get("/api/v1/query", (req, res) => {
-  console.log(req.query);
-  res.json(req.query);
+  const { search, limit } = req.query;
+  let sortedProdcuts = [...data.products];
+
+  if (search) {
+    sortedProdcuts = sortedProdcuts.filter((product) => {
+      return product.name.toLowerCase().includes(search.toLowerCase());
+    });
+  }
+
+  if (limit) {
+    sortedProdcuts = sortedProdcuts.slice(0, limit);
+  }
+  if (!sortedProdcuts.length) {
+    return res.status(404).json({ message: "Product not found" });
+  }
+
+  res.json({
+    success: true,
+    products: sortedProdcuts,
+  });
 });
 
 app.listen(4500, () => {
