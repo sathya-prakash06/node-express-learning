@@ -7,7 +7,8 @@
 // console.log('Welcome to the jungle!!!');
 
 const http = require("http");
-const { readFile } = require("fs");
+const { readFile, writeFile } = require("fs").promises;
+const util = require("util");
 
 // const server = http.createServer((req, res) => {
 //   if (req.url === "/") {
@@ -29,17 +30,20 @@ const { readFile } = require("fs");
 //   console.log("Server is running on port 4500");
 // });
 
-const getText = (path) => {
-  return new Promise((resolve, reject) => {
-    readFile(path, "utf-8", (err, data) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(data);
-      }
-    });
-  });
-};
+// const readFilePromise = util.promisify(readFile);
+// const writeFilePromise = util.promisify(writeFile);
+
+// const getText = (path) => {
+//   return new Promise((resolve, reject) => {
+//     readFile(path, "utf-8", (err, data) => {
+//       if (err) {
+//         reject(err);
+//       } else {
+//         resolve(data);
+//       }
+//     });
+//   });
+// };
 
 // getText("./contents/first.txt")
 //   .then((res) => {
@@ -51,11 +55,20 @@ const getText = (path) => {
 
 const start = async () => {
   try {
-    const res = await getText("./contents/first.txt");
+    const res = await readFile("./contents/first.txt", "utf-8");
+    const res2 = await writeFile(
+      "./contents/new.txt",
+      "This is awesome, yyyy",
+      "utf-8",
+      {
+        flag: "a",
+      }
+    );
     console.log(res);
+    console.log(res2);
   } catch (error) {
     console.log(error);
   }
 };
 
-start()
+start();
