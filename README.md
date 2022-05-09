@@ -27,8 +27,8 @@
 ### NPM 
 
 - global command comes with node
-- local dependency - npm i <package>
-- global dependency - npm install -g <package>
+- local dependency - npm i < packageName >
+- global dependency - npm install -g < packageName >
 - Node Package Manager
 - npm install
 - npm uninstall
