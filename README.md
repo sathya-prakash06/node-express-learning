@@ -22,3 +22,18 @@
 - Path
 - FS
 - HTTP
+
+
+### NPM 
+
+- global command comes with node
+- local dependency - npm i <package>
+- global dependency - npm install -g <package>
+- Node Package Manager
+- npm install
+- npm uninstall
+- npm update
+- npm list
+- npm search
+- npm help
+
